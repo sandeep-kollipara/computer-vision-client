@@ -14,7 +14,7 @@ if __name__ == '__main__':
     # Client socket
     # create an INET, STREAMing socket : 
     client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    host_ip = '<localhost>'# Standard loopback interface address (localhost)
+    host_ip = '172.67.205.138' #'<localhost>'# Standard loopback interface address (localhost)
     port = 10050 # Port to listen on (non-privileged ports are > 1023)
     # now connect to the web server on the specified port number
     client_socket.connect((host_ip,port)) 
