@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+venviron # Added for this project - SK
 
 # Spyder project settings
 .spyderproject
