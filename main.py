@@ -14,7 +14,7 @@ if __name__ == '__main__':
     # Client socket
     # create an INET, STREAMing socket : 
     client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-    host_ip = '172.67.205.138' #'<localhost>'# Standard loopback interface address (localhost)
+    host_ip = 'socket.sandy.plus' #'<localhost>'# Standard loopback interface address (localhost)
     port = 10050 # Port to listen on (non-privileged ports are > 1023)
     # now connect to the web server on the specified port number
     client_socket.connect((host_ip,port)) 
@@ -23,7 +23,7 @@ if __name__ == '__main__':
     data = b""
     # Q: unsigned long long integer(8 bytes)
     payload_size = struct.calcsize("Q")
-
+    '''
     while True:
         while len(data) < payload_size:
             packet = client_socket.recv(4*1024)
@@ -42,6 +42,17 @@ if __name__ == '__main__':
         if key  == 13:
             break
     client_socket.close()
-
+    '''
+    
+    s = client_socket
+    s.connect((host, port))
+    while True: 
+        try:
+            print("From Server: ", s.recv(1024)) 
+            s.send(raw_input("Client please type: "))
+        except:
+            break
+    s.close()
+    
     input("Press ENTER to exit.")
     print("Bye!")
