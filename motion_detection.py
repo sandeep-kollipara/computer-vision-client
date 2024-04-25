@@ -10,7 +10,7 @@ IP_ADDRESS = 'cam.sandy.plus'
 
 if __name__ == '__main__':
     
-    background = cv2.imread("background.png")
+    background = cv2.imread(r"/images/background.png")
     background = cv2.cvtColor(background,cv2.COLOR_BGR2GRAY)
     background = cv2.GaussianBlur(background,(21,21),0)
     
