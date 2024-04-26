@@ -10,11 +10,13 @@ IP_ADDRESS = 'cam.sandy.plus'
 
 if __name__ == '__main__':
     
+    video = cv2.VideoCapture("http://{}/stream.mjpg".format(IP_ADDRESS)) #Shifted to the beginning of the code
+    
+    image = video.read()[1]
+    cv2.imwrite(r"images/background.png", image)
     background = cv2.imread(r"images/background.png")
     background = cv2.cvtColor(background,cv2.COLOR_BGR2GRAY)
     background = cv2.GaussianBlur(background,(21,21),0)
-    
-    video = cv2.VideoCapture("http://{}/stream.mjpg".format(IP_ADDRESS))
     
     while True:
         status, frame = video.read()
