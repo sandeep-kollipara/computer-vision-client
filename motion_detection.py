@@ -14,7 +14,7 @@ if __name__ == '__main__':
     
     image = video.read()[1]
     cv2.imwrite(r"images/background.png", image)
-    background = cv2.imread(r"images/background.png")
+    background = cv2.imread(r"images/background_night.png") #CHange this back to 'background.png' for auto-initialization
     background = cv2.cvtColor(background,cv2.COLOR_BGR2GRAY)
     background = cv2.GaussianBlur(background,(21,21),0)
     
